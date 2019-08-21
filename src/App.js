@@ -30,7 +30,7 @@ class App extends Component {
   sushiClickHandler = sushiObj => {
     if (sushiObj.price > this.state.money) {
       alert("out of money");
-    } else {
+    } else if (!this.state.eatenSushis.includes(sushiObj)) {
       this.setState({
         eatenSushis: [...this.state.eatenSushis, sushiObj],
         money: this.state.money - sushiObj.price
